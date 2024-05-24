@@ -1,6 +1,10 @@
 # Cloudflare Worker 2 Trojan & Sub
 这是一个基于 Cloudflare Worker 平台的脚本，在原版的基础上修改了显示 Trojan 配置信息转换为订阅内容。使用该脚本，你可以方便地将 Trojan 配置信息使用在线配置转换到 Clash 或 Singbox 等工具中。
 
+- **一步到位**部署视频教程：https://youtu.be/MBlAqYajVSY ***小白必看 一步到胃 最佳推荐!!!***
+- **自制优选**订阅视频教程：https://youtu.be/jOhq3QpXG_I *折腾自己的专属订阅*
+- **进阶使用**技巧视频教程：https://youtu.be/0Cd8uTNJj1Q *然后成为折腾的王*
+
 Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
 
 # 免责声明
@@ -24,9 +28,9 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
 
 ## 风险提示
 - 通过提交虚假的节点配置给订阅服务，避免节点配置信息泄露。
-- 另外，您也可以选择自行部署 [WorkerTrojan2sub 订阅生成服务](https://github.com/cmliu/WorkerTrojan2sub)，这样既可以利用订阅生成器的便利。
+- 另外，您也可以选择自行部署 [WorkerVless2sub 订阅生成服务](https://github.com/cmliu/WorkerVless2sub)，这样既可以利用订阅生成器的便利。
 
-## Workers 部署方法 [视频教程](https://youtu.be/MBlAqYajVSY)
+## Workers 部署方法 [视频教程](https://www.youtube.com/watch?v=MBlAqYajVSY&t=169s)
 1. 部署 Cloudflare Worker：
    - 在 Cloudflare Worker 控制台中创建一个新的 Worker。
    - 将 [worker.js](https://github.com/cmliu/epeius/blob/main/_worker.js) 的内容粘贴到 Worker 编辑器中。
@@ -49,7 +53,7 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
      ```
 
 3. 访问订阅内容：
-   - 访问 `https://[YOUR-WORKERS-URL]/[password]` 即可获取订阅内容。
+   - 访问 `https://[YOUR-WORKERS-URL]/[PASSWORD]` 即可获取订阅内容。
    - 例如 `https://vless.google.workers.dev/auto` 就是你的通用自适应订阅地址。
    - 例如 `https://vless.google.workers.dev/auto?sub` Base64订阅格式，适用PassWall,SSR+等。
    - 例如 `https://vless.google.workers.dev/auto?clash` Clash订阅格式，适用OpenClash等。
@@ -82,7 +86,7 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
    ```
 
 3. 访问订阅内容：
-   - 访问 `https://[YOUR-PAGES-URL]/[password]` 即可获取订阅内容。
+   - 访问 `https://[YOUR-PAGES-URL]/[PASSWORD]` 即可获取订阅内容。
    - 例如 `https://epeius.pages.dev/auto` 就是你的通用自适应订阅地址。
    - 例如 `https://epeius.pages.dev/auto?sub` Base64订阅格式，适用PassWall,SSR+等。
    - 例如 `https://epeius.pages.dev/auto?clash` Clash订阅格式，适用OpenClash等。
@@ -95,7 +99,7 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
      您分配到的域名是 `fuck.cloudns.biz`，则添加自定义域填入 `lizi.fuck.cloudns.biz`即可；
    - 按照 Cloudflare 的要求将返回你的域名DNS服务商，添加 该自定义域 `lizi`的 CNAME记录 `epeius.pages.dev` 后，点击 `激活域`即可。
 
-## Pages GitHub 部署方法
+## Pages GitHub 部署方法 [视频教程](https://www.youtube.com/watch?v=0Cd8uTNJj1Q&t=96s)
 1. 部署 Cloudflare Pages：
    - 在 Github 上先 Fork 本项目，并点上 Star !!!
    - 在 Cloudflare Pages 控制台中选择 `连接到 Git`后，选中 `epeius`项目后点击 `开始设置`。
@@ -117,7 +121,7 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
    ```
 
 3. 访问订阅内容：
-   - 访问 `https://[YOUR-PAGES-URL]/[password]` 即可获取订阅内容。
+   - 访问 `https://[YOUR-PAGES-URL]/[PASSWORD]` 即可获取订阅内容。
    - 例如 `https://epeius.pages.dev/auto` 就是你的通用自适应订阅地址。
    - 例如 `https://epeius.pages.dev/auto?sub` Base64订阅格式，适用PassWall,SSR+等。
    - 例如 `https://epeius.pages.dev/auto?clash` Clash订阅格式，适用OpenClash等。
@@ -137,13 +141,13 @@ Telegram交流群：[@CMLiussss](https://t.me/CMLiussss)
 | PROXYIP | proxyip.fxxk.dedyn.io | 备选作为访问CloudFlareCDN站点的代理节点(支持多ProxyIP, ProxyIP之间使用`,`或 换行 作间隔) |
 | SOCKS5  | user:password@127.0.0.1:1080 | 优先作为访问CloudFlareCDN站点的SOCKS5代理 |
 | ADD | www.csgo.com:2087,icook.hk | 本地优选域名/优选IP(支持多元素之间`,`或 换行 作间隔) |
-| ADDAPI |  | 不解释, 懂得都懂 |
-| ADDCSV |  | 不解释, 懂得都懂 |
-| DLS | 8 | 不解释, 懂得都懂 | 
+| ADDAPI | [https://raw.github.../addressesapi.txt](https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressesapi.txt) | 不解释, 懂得都懂 |
+| ADDCSV | [https://raw.github.../addressescsv.csv](https://raw.githubusercontent.com/cmliu/WorkerVless2sub/main/addressescsv.csv) | 不解释, 懂得都懂 |
+| DLS | 8 | `ADDCSV`测速结果满足速度下限 | 
 | TGTOKEN | 6894123456:XXXXXXXXXX0qExVsBPUhHDAbXXXXXqWXgBA | 发送TG通知的机器人token | 
 | TGID | 6946912345 | 接收TG通知的账户数字ID | 
 | SUB | trojan.fxxk.dedyn.io | 优选订阅生成器地址(使用订阅器将放弃`ADD`内的本地优选订阅内容) |
-| SUBAPI | apiurl.v1.mk | clash、singbox等 订阅转换后端 |
+| SUBAPI | url.v1.mk | clash、singbox等 订阅转换后端 |
 | SUBCONFIG | [https://raw.github.../ACL4SSR_Online_Mini.ini](https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini) | clash、singbox等 订阅转换配置文件 |
 | SUBNAME | epeius | 订阅名称 | 
 | RPROXYIP | false | 设为 true 即可强制获取订阅器分配的ProxyIP(需订阅器支持)|
